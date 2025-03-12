@@ -1,0 +1,147 @@
+:root {
+    --primary-color: #E8FD86;
+    --secondary-color: #190905;
+    --tertiary-color: #243F3B;
+    --txt-color: black;
+    --light-txt-color: #E6F4D1;
+
+    --primary-font: "Inter Tight", sans-serif;
+    --secondary-font: "PT Serif", serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--primary-font);
+    font-size: 100%;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .pre-header {
+        padding: .75em 0;
+        background-color: var(--secondary-color);
+        .btn-customer {
+            display: flex;
+            justify-content: flex-end;
+            a {
+                display: flex;
+                align-items: center;
+                font-size: 19px;
+                color: var(--light-txt-color);
+                span {
+                    margin-right: 10px;
+                }
+                span, img {
+                    display: block;
+                }
+            }
+        }
+    }
+    .main-header {
+        padding: 2em 0;
+        .row-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+.main-content {
+    .hero-bg {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+        .container {
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        .hero-content {
+            &__title {
+                width: 866px;
+                font-size: 58px;
+                color: var(--primary-color);
+                font-weight: 400;
+                span {
+                    font-family: var(--secondary-font);
+                    font-style: italic;
+                }
+            }
+        }
+        .logo-animation {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 2em 0;
+            background-color: var(--tertiary-color);
+            bottom: 0;
+            &__change {
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                animation-name: logo-animate;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+            }
+            @keyframes logo-animate {
+                0% {
+                    background-image: url('../images/a-compliance.svg');
+                    width: 250px;
+                    height: 41px;
+                }
+                20% {
+                    background-image: url('../images/a-cultura.svg');
+                    width: 164px;
+                    height: 41px;
+                }
+                40% {
+                    background-image: url('../images/a-desarrollo.svg');
+                    width: 204px;
+                    height: 41px;
+                }
+                60% {
+                    background-image: url('../images/a-integracion.svg');
+                    width: 243px;
+                    height: 41px;
+                }
+                80% {
+                    background-image: url('../images/a-se.svg');
+                    width: 62px;
+                    height: 41px;
+                }
+                100% {
+                    background-image: url('../images/a-c.svg');
+                    width: 42px;
+                    height: 41px;
+                }
+            }
+            &__pragma {
+                img {
+                    display: block;
+                    margin-left: .5em;
+                }
+            }
+        }
+    }
+}
