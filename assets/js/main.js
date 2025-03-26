@@ -23,7 +23,20 @@ $(document).ready( function() {
             scrollTop: $section.offset().top
         }, 500);
     }
+
     $('[data-scroll]').on('click', scrollToSection);
+    
+    $('.col-animated ul').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        dots: false,
+        fade: true,
+        pauseOnFocus: false,
+        pauseOnHover: false
+    });
 
 })
 
@@ -44,7 +57,7 @@ gsap.from(".item-globe1", {
     y: 200,
     duration: 1,
     scrollTrigger: '.item-globe1',
-    stagger: 0.05
+    stagger: 0.05,
 });
 
 gsap.from(".item-globe2", {
@@ -52,6 +65,145 @@ gsap.from(".item-globe2", {
     duration: 1,
     scrollTrigger: '.item-globe2',
     stagger: 0.05
+});
+
+gsap.from(".item-findings-info", {
+    x: 200,
+    duration: 1,
+    scrollTrigger: '.item-findings-info',
+    stagger: 0.05
+});
+
+gsap.from(".col-btns-contact", {
+    y: 200,
+    duration: 1,
+    scrollTrigger: '.col-btns-contact',
+    stagger: 0.05
+});
+
+gsap.from(".txt-ts1", {
+    x: -200,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts1'
+});
+
+gsap.from(".txt-ts2", {
+    x: -200,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts2'
+});
+
+gsap.from(".txt-ts3", {
+    x: -200,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts3'
+});
+
+gsap.from(".txt-ts4", {
+    x: -200,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts4'
+});
+
+gsap.from(".txt-ts5", {
+    x: -200,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts5'
+});
+
+gsap.from(".top-tit1", {
+    x: -200,
+    delay: 0.5,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts1'
+});
+
+gsap.from(".top-tit2", {
+    x: -200,
+    delay: 0.5,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts2'
+});
+
+gsap.from(".top-tit3", {
+    x: -200,
+    delay: 0.5,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts3'
+});
+
+gsap.from(".top-tit4", {
+    x: -200,
+    delay: 0.5,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts4'
+});
+
+gsap.from(".top-tit5", {
+    x: -200,
+    delay: 0.5,
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.txt-ts5'
+});
+
+gsap.from(".subhead1", {
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.subhead1'
+});
+
+gsap.from(".subhead2", {
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.subhead2'
+});
+
+gsap.from(".subhead3", {
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.subhead3'
+});
+
+gsap.from(".subhead4", {
+    duration: 1,
+    opacity: 0,
+    scrollTrigger: '.subhead4'
+});
+
+gsap.from(".bg-circle", {
+    y: 300,
+    duration: 0.3,
+    scrollTrigger: '.bg-circle'
+});
+
+gsap.from(".circle-stop", {
+    opacity: 0,
+    delay: 1.5,
+    duration: 1,
+    scale: 1.5,
+    ease: "power3.in",
+    scrollTrigger: '.circle-stop'
+});
+
+gsap.from(".circle-info", {
+    opacity: 0,
+    duration: 0.5,
+    scale: 1.3,
+    y: 50,
+    x: 50,
+    ease: "power3.in",
+    scrollTrigger: '.circle-info',
+    stagger: 0.3
 });
 
 gsap.from(".logo", {
