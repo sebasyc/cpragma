@@ -67,8 +67,8 @@ body {
 }
 
 ::selection {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
 }
 
 a {
@@ -567,7 +567,7 @@ footer {
                 .box-img-cpragma {
                     width: 600px;
                     height: 600px;
-                    background-image: url("../images/bg-c-pragma.png");
+                    background-image: url("../images/bg-c-pragma.webp");
                     background-position: 85% 95%;
                     background-size: 800px;
                     background-repeat: no-repeat;
