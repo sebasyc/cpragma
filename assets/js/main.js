@@ -25,22 +25,55 @@ $(document).ready( function() {
     }
 
     $('[data-scroll]').on('click', scrollToSection);
-    
-    $('.col-animated ul').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
+
+    var $slider = $('.logo-animation-list').slick({
+        infinite: true,
+        fade: true,
+        speed: 300,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 1500,
+        cssEase: 'linear',
         arrows: false,
         dots: false,
-        fade: true,
-        pauseOnFocus: false,
-        pauseOnHover: false
+        adaptiveHeight: false,
+        pauseOnHover: false,
+        pauseOnFocus: false
     });
 
-})
+    // Función para ajustar el ancho del wrapper
+    function adjustWrapperWidth() {
+        var $activeSlide = $('.slick-active');
+        var imgWidth = $activeSlide.find('img').width();
+        $('.logo-animation-list').css('width', imgWidth + 'px');
+    }
+    
+    // Ajuste inicial después de que Slick se haya inicializado
+    setTimeout(adjustWrapperWidth, 100);
+    
+    // Ajustar el ancho en cada cambio de slide
+    $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var $nextSlide = $(slick.$slides[nextSlide]);
+        var nextWidth = $nextSlide.find('img').width();
+        $('.logo-animation-list').css('width', nextWidth + 'px');
+    });
+    
+    // Ajuste adicional por si acaso
+    $slider.on('afterChange', adjustWrapperWidth);
+    
+    // Ajustar también cuando se redimensiona la ventana
+    $(window).on('resize', adjustWrapperWidth);
 
-gsap.registerPlugin(ScrollTrigger);
+    // $('.logo-animation-list').on('afterChange', function(event, slick, currentSlide){
+    //     const activeSlide = $(slick.$slides.get(currentSlide));
+    //     const imgWidth = activeSlide.find('img').width();
+    //     $(this).width(imgWidth);
+    // });
+    
+    // // Ajustar inicialmente el ancho
+    // const initialWidth = $('.slick-slide').first().find('img').width();
+    // $('.logo-animation-list').width(initialWidth);
+
+})
 
 gsap.to(".hero-bg", {
     backgroundPositionY: "90%",
