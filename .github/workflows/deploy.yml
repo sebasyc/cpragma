@@ -3,12 +3,20 @@ on:
     branches:
       - main
   workflow_dispatch:
+
 jobs:
   run_pull:
     name: run pull
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check SSH connectivity
+        run: |
+          echo "Testing SSH connection..."
+          ssh -v -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} \
+          -i <(echo "${{ secrets.SSH_PRIVATE_KEY }}") \
+          ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo 'SSH connection successful'"
+        
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -18,4 +26,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd ${{ secrets.WORK_DIR }}  
-            git pull 
+            git pull
