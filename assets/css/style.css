@@ -751,6 +751,10 @@ footer {
                                 margin-left: .5em;
                                 border: 1px solid var(--secondary-color);
                                 border-radius: 50px;
+                                width: 450px;
+                                @media (max-width: 767px) {
+                                    width: auto;
+                                }
                             }
                         }
                     }
